@@ -10,16 +10,16 @@ execute:
   
 website:
   page-navigation: true  
-  title: "2023 ITCOocean Hack2week"
-  favicon: images/incois-icon.png
-  site-url: https://Hackweek-ITCOocean.github.io/2023-Hackbook
-  repo-url: https://github.com/Hackweek-ITCOocean/2023-Hackbook
+  title: "2024 NOAA HackDays"
+  favicon: https://raw.githubusercontent.com/nmfs-opensci/assets/main/favicon/favicon-16x16.png
+  site-url: https://nmfs-opensci.github.io/NOAAHackDays-2024
+  repo-url: https://github.com/nmfs-opensci/NOAAHackDays-2024
   repo-actions: [edit, issue, source]
   
-  page-footer: <img src="/images/incois.png" alt="INCOIS logo" style="width:150px"><br />ITCOocean Hack2week (2023)
+  page-footer: <img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="NMFS Open Science logo" style="width:150px"><br />NMFS Open Science (2023)
  
   sidebar:
-    logo: images/incois-logos.png
+    logo: https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true
     pinned: true
     align: center
     
@@ -32,7 +32,7 @@ website:
         contents:
           - overview.md
           - team.md
-          - schedule.md
+#          - schedule.md
           - setup.md
           - support.md
           - hackweek-links.md
@@ -83,10 +83,10 @@ website:
         contents:
           - projects/index.md
           - projects/hackathon-projects.md
-      - section: "Further Resources"
-        contents:
-          - content/XX-r-and-python-resources.md
-          - content/XX-further-resources.md
+#      - section: "Further Resources"
+#        contents:
+#          - content/XX-r-and-python-resources.md
+#          - content/XX-further-resources.md
       - section: "Python Tutorials"
         contents:
           - section: "Data Access"
@@ -111,15 +111,15 @@ website:
             contents:
               - python-notebooks/04_Combining_Data.ipynb
               - python-notebooks/04_Appending_Data.ipynb
-      - text: <img width=100px>
-      - text: <img src="/images/ecsn.png" width=100px>
-        href: https://iioe-2.incois.gov.in/ecsn/index.html
-      - text: <img src="/images/ocean-decade.png" width=150px>
-        href: https://oceandecade.org/
-      - text: <img src="/images/dcc-ior.png" width=150px>
-        href: https://incois.gov.in/dcc-ior/index.jsp
-      - text: <img src="/images/ecop.png" width=150px>
-        href: https://www.ecopdecade.org/
+#      - text: <img width=100px>
+#      - text: <img src="/images/ecsn.png" width=100px>
+#        href: https://iioe-2.incois.gov.in/ecsn/index.html
+#      - text: <img src="/images/ocean-decade.png" width=150px>
+#        href: https://oceandecade.org/
+#      - text: <img src="/images/dcc-ior.png" width=150px>
+#        href: https://incois.gov.in/dcc-ior/index.jsp
+#      - text: <img src="/images/ecop.png" width=150px>
+#        href: https://www.ecopdecade.org/
 #      - text: DECCaD-IO
 #        href: https://oceandecade.org/actions/devising-early-career-capacity-development-indocn-deccad-io/
   navbar:
@@ -127,16 +127,16 @@ website:
     search: true
     right: 
       - icon: server
-        href: https://itcoocean.2i2c.cloud/
+        href: https://dhub.opensci.live/
         text: "JupyterHub"
       - icon: wechat
-        href: https://github.com/orgs/Hackweek-ITCOocean/discussions
+        href: https://github.com/orgs/nmfs-opensci/discussions
         text: "Discussions"
-      - icon: slack
-        href: https://app.slack.com/client/T05PV2USY56/C05P7QP47UL
-        text: "Slack"
+#      - icon: slack
+#        href: https://app.slack.com/client/T05PV2USY56/C05P7QP47UL
+#        text: "Slack"
       - icon: globe
-        href: https://github.com/Hackweek-ITCOocean
+        href: https://github.com/nmfs-opensci
         text: "GH org"
 
 

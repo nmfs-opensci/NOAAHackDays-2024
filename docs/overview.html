@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 ITCOocean Hack2week - Overview</title>
+<title>2024 NOAA HackDays - Overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./team.html" rel="next">
 <link href="./index.html" rel="prev">
-<link href="./images/incois-icon.png" rel="icon" type="image/png">
+<link href="./https://raw.githubusercontent.com/nmfs-opensci/assets/main/favicon/favicon-16x16.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -59,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -71,11 +78,11 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">2023 ITCOocean Hack2week</span>
+    <span class="navbar-title">2024 NOAA HackDays</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -85,30 +92,25 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://itcoocean.2i2c.cloud/" rel="" target=""><i class="bi bi-server" role="img">
+    <a class="nav-link" href="https://dhub.opensci.live/"> <i class="bi bi-server" role="img">
 </i> 
- <span class="menu-text">JupyterHub</span></a>
+<span class="menu-text">JupyterHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/orgs/Hackweek-ITCOocean/discussions" rel="" target=""><i class="bi bi-wechat" role="img">
+    <a class="nav-link" href="https://github.com/orgs/nmfs-opensci/discussions"> <i class="bi bi-wechat" role="img">
 </i> 
- <span class="menu-text">Discussions</span></a>
+<span class="menu-text">Discussions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://app.slack.com/client/T05PV2USY56/C05P7QP47UL" rel="" target=""><i class="bi bi-slack" role="img">
+    <a class="nav-link" href="https://github.com/nmfs-opensci"> <i class="bi bi-globe" role="img">
 </i> 
- <span class="menu-text">Slack</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/Hackweek-ITCOocean" rel="" target=""><i class="bi bi-globe" role="img">
-</i> 
- <span class="menu-text">GH org</span></a>
+<span class="menu-text">GH org</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -116,9 +118,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li><li class="breadcrumb-item"><a href="./overview.html">Overview</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li><li class="breadcrumb-item"><a href="./overview.html">Overview</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -128,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/incois-logos.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -152,12 +154,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Our Team</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./schedule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -339,7 +335,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r-tutorials/SDM-lab1.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./r-tutorials/SDM-lab1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SDM 1</span></a>
   </div>
 </li>
@@ -373,44 +369,21 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
- <span class="menu-text">Further Resources</span></a>
+ <span class="menu-text">Python Tutorials</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content/XX-r-and-python-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R and Python Resources</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content/XX-further-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Additional resources</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
- <span class="menu-text">Python Tutorials</span></a>
+ <span class="menu-text">Data Access</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
- <span class="menu-text">Data Access</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">
@@ -445,13 +418,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
  <span class="menu-text">Using Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python-notebooks/02_Using_Data.html" class="sidebar-item-text sidebar-link">
@@ -491,13 +464,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
  <span class="menu-text">IO Zarr Database</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python-notebooks/04_Combining_Data.html" class="sidebar-item-text sidebar-link">
@@ -514,33 +487,6 @@ ul.task-list li input[type="checkbox"] {
   </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text"><img width="100px"></span>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://iioe-2.incois.gov.in/ecsn/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="./images/ecsn.png" width="100px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://oceandecade.org/" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="./images/ocean-decade.png" width="150px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://incois.gov.in/dcc-ior/index.jsp" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="./images/dcc-ior.png" width="150px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.ecopdecade.org/" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="./images/ecop.png" width="150px"></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -551,13 +497,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#hackweek-focus-species-distribution-modelling" id="toc-hackweek-focus-species-distribution-modelling" class="nav-link active" data-scroll-target="#hackweek-focus-species-distribution-modelling">Hackweek focus: species distribution modelling</a></li>
-  <li><a href="#aims-and-objectives" id="toc-aims-and-objectives" class="nav-link" data-scroll-target="#aims-and-objectives">Aims and Objectives</a></li>
+  <li><a href="#aims-and-objectives" id="toc-aims-and-objectives" class="nav-link active" data-scroll-target="#aims-and-objectives">Aims and Objectives</a></li>
   <li><a href="#what-is-a-hackweek" id="toc-what-is-a-hackweek" class="nav-link" data-scroll-target="#what-is-a-hackweek">What is a hackweek?</a></li>
-  <li><a href="#what-to-expect" id="toc-what-to-expect" class="nav-link" data-scroll-target="#what-to-expect">What to expect</a></li>
   <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of Conduct</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/edit/main/overview.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/blob/main/overview.md" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/nmfs-opensci/NOAAHackDays-2024/edit/main/overview.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-opensci/NOAAHackDays-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/nmfs-opensci/NOAAHackDays-2024/blob/main/overview.md" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -571,7 +515,7 @@ function googleTranslateElementInit() {
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li><li class="breadcrumb-item"><a href="./overview.html">Overview</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Overview</h1>
 </div>
@@ -586,42 +530,27 @@ function googleTranslateElementInit() {
   </div>
   
 
+
 </header>
 
-<p>The the era of big data in the earth sciences is here and learning how to effectively use oceanographic remote-sensing data, both in the cloud and on your computer, is a core skill for modern fisheries science and management. Learning how to access cloud-based data, visualize these data, use these data in models, and use the tools of modern reproducible and collaborative science is the main goal of this course. Through the course, participants will gain experience with assessing remote-sensing data in the cloud, R and RStudio, and collaborating with Git and GitHub. <em>Python users: Python is also very heavily used in big data geosciences. The course tutorials will focus on R, however you are welcome to use Python during the course if you are more comfortable with that.</em></p>
-<section id="hackweek-focus-species-distribution-modelling" class="level2">
-<h2 class="anchored" data-anchor-id="hackweek-focus-species-distribution-modelling">Hackweek focus: species distribution modelling</h2>
-<p>In depth understanding of machine learning for species (macrofauna) distribution modelling (SDM) is needed by many young ecosystem researchers. SDMs are an important class of models used to understand species association with the environment. SDMs are widely used to understand how species distributions are changing with ocean climate change and are also used to estimate abundance over large ocean regions from fisheries survey data. This course is devised to familiarize the young professionals in the Indian Ocean-rim (IOR) countries with the latest developments in this field.</p>
-<p><em>This course does not aim to teach ecology and habitat to the oceanographers/modellers/machine learning experts, rather it aims to teach machine learning and coding (and its relevance to fisheries) to fishery professionals.</em></p>
-</section>
+
+<p>The the era of big data in the earth sciences is here and learning how to effectively use oceanographic remote-sensing data, both in the cloud and on your computer, is a core skill for modern fisheries science and management. Learning how to access cloud-based data, visualize these data, use these data in models, and use the tools of modern reproducible and collaborative science is the main goal of this course. Through the course, participants will gain experience with assessing remote-sensing data in the cloud, R and RStudio, Python and Jupyter notebooks, and collaborating with Git and GitHub.</p>
 <section id="aims-and-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="aims-and-objectives">Aims and Objectives</h2>
 <ul>
 <li>Learn how to discover and use oceanographic remote-sensing data for species distribution modeling and other fisheries applications</li>
-<li>Familiarize participants with using remote-sensing data in R within models. Note participants who are more familiar with Python are welcome to use Python also.</li>
-<li>Introduce the participants to machine learning models used in species distribution modelling.</li>
-<li>Obtain hands-on experience in using species distribution modelling and machine-learning with remote-sensing data.</li>
-<li>Work on a group project using species distribution modelling to estimate habitat associations or obtain a stock estimate using a species distribution model.</li>
+<li>Familiarize participants with using remote-sensing data and geospatial tools in R and Python code.</li>
+<li>Obtain hands-on experience in using remote-sensing data and other earth data in science workflows by working together on a group project.</li>
 </ul>
-<p><em>Note, there are many ways that participants can study aspects of species distribution using remote-sensing data. During the hackweek portion of the course, participants will jointly develop project to work on and in order to learn by diving into a specific project. Species location data will not be specifically required in order to engage in the projects.</em></p>
 </section>
 <section id="what-is-a-hackweek" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-hackweek">What is a hackweek?</h2>
 <p><em>A hackweek is a participant-driven workshop that blends data science education, community building, and project work over a short period of time (one to two weeks). The events are highly immersive and allow participants to work directly with data science professionals to co-shape projects and educational outcomes. Hackweeks help individuals and teams engage more effectively in open and reproducible science.</em> - <a href="https://escience.washington.edu/using-data-science/hackweeks/">eScience Institute</a>, University of Washington, Seattle USA</p>
 <p><a href="https://doi.org/10.1073/pnas.1717196115">The hackweek model</a> has become a vital tool in the data science community, fostering idea exchange through modern data analysis workflow training. Unlike traditional academic events, hackweeks offer intensive, interactive learning, including tutorials on cutting-edge methods, peer-based learning, and collaborative on-site projects. Unlike hackathons, which emphasize software development, hackweeks prioritize education and open-ended projects, benefiting fields needing both expertise and efficient computational workflows for idea exchange and discovery. The hackweek model is now widely used in many fields: <a href="http://astrohackweek.org">Astrohackweek</a>, <a href="https://neurohackweek.github.io">Neurohackweek</a>, <a href="https://geohackweek.github.io">Geohackweek</a>, <a href="https://oceanhackweek.github.io">OceanHackWeek</a>, <a href="https://icesat-2-2023.hackweek.io/">ICESat-2 Hackweek</a>, <a href="https://snowex.hackweek.io/">SnowEx Hackweek</a>, <a href="https://nasa-openscapes.github.io/2021-Cloud-Hackathon/">NASA Cloud Hackathon</a>. The ITCOocean Hack2week is modeled off the University of Washington <a href="https://escience.washington.edu/using-data-science/hackweeks/">eScience Hackweek model</a>.</p>
 </section>
-<section id="what-to-expect" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-expect">What to expect</h2>
-<ul>
-<li>During the first week of the ITCOocean hack2week, participants will work on learning how to access, visualize and manipulate remote-sensing data in R. Participants will develop familiarity with the R language, with RStudio, and with Git and GitHub for collaboration.</li>
-<li>During the second week, participants will begin focusing on species distribution modeling and will work on a team project.</li>
-<li>The course is an open science event: all tutorials and examples are developed openly and will be publicly available during and following the course. Participants will strengthen their practice of open science, using open source code and collaborating on their projects with course peers.</li>
-</ul>
-<p>In the two to three weeks leading up to the course, participants are encouraged to review background resources that will facilitate a more effective experience.</p>
-</section>
 <section id="code-of-conduct" class="level2">
 <h2 class="anchored" data-anchor-id="code-of-conduct">Code of Conduct</h2>
-<p>The 2023 ITCOocean Hackweek is a safe learning space and all participants are required to abide by our <a href="coc.html">Code of Conduct</a>.</p>
+<p>The NOAA HackDays events are a safe learning space and all participants are required to abide by our <a href="coc.html">Code of Conduct</a>.</p>
 
 
 </section>
@@ -668,6 +597,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -736,13 +692,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -821,10 +779,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -834,8 +791,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -848,6 +814,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -891,6 +979,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -916,6 +1005,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -977,12 +1092,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link  aria-label=" welcome"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./team.html" class="pagination-link">
+      <a href="./team.html" class="pagination-link" aria-label="Our Team">
         <span class="nav-page-text">Our Team</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -993,12 +1108,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><img src="./images/incois.png" alt="INCOIS logo" style="width:150px"><br>ITCOocean Hack2week (2023)</div>
+    <div class="nav-footer-center">
+<p><img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="NMFS Open Science logo" style="width:150px"><br>NMFS Open Science (2023)</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

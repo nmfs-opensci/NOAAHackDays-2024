@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 ITCOocean Hack2week - NASA Earth Data</title>
+<title>2024 NOAA HackDays - NASA Earth Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../python-notebooks/01_ERA5_S3_Downloader.html" rel="next">
 <link href="../python-notebooks/00_NASA_Earthdata_Authentication.html" rel="prev">
-<link href="../images/incois-icon.png" rel="icon" type="image/png">
+<link href="../https://raw.githubusercontent.com/nmfs-opensci/assets/main/favicon/favicon-16x16.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -93,11 +99,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
@@ -109,11 +116,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">2023 ITCOocean Hack2week</span>
+    <span class="navbar-title">2024 NOAA HackDays</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -123,30 +130,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://itcoocean.2i2c.cloud/" rel="" target=""><i class="bi bi-server" role="img">
+    <a class="nav-link" href="https://dhub.opensci.live/"> <i class="bi bi-server" role="img">
 </i> 
- <span class="menu-text">JupyterHub</span></a>
+<span class="menu-text">JupyterHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/orgs/Hackweek-ITCOocean/discussions" rel="" target=""><i class="bi bi-wechat" role="img">
+    <a class="nav-link" href="https://github.com/orgs/nmfs-opensci/discussions"> <i class="bi bi-wechat" role="img">
 </i> 
- <span class="menu-text">Discussions</span></a>
+<span class="menu-text">Discussions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://app.slack.com/client/T05PV2USY56/C05P7QP47UL" rel="" target=""><i class="bi bi-slack" role="img">
+    <a class="nav-link" href="https://github.com/nmfs-opensci"> <i class="bi bi-globe" role="img">
 </i> 
- <span class="menu-text">Slack</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/Hackweek-ITCOocean" rel="" target=""><i class="bi bi-globe" role="img">
-</i> 
- <span class="menu-text">GH org</span></a>
+<span class="menu-text">GH org</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -154,9 +156,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tutorials</li><li class="breadcrumb-item"><a href="../python-notebooks/00_NASA_Earthdata_Authentication.html">Data Access</a></li><li class="breadcrumb-item"><a href="../python-notebooks/01_earthaccess_Downloader.html">NASA Earth Data</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tutorials</li><li class="breadcrumb-item"><a href="../python-notebooks/00_NASA_Earthdata_Authentication.html">Data Access</a></li><li class="breadcrumb-item"><a href="../python-notebooks/01_earthaccess_Downloader.html">NASA Earth Data</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -166,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/incois-logos.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -190,12 +192,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Our Team</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -377,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-tutorials/SDM-lab1.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../r-tutorials/SDM-lab1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SDM 1</span></a>
   </div>
 </li>
@@ -410,45 +406,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
- <span class="menu-text">Further Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text">Python Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/XX-r-and-python-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R and Python Resources</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/XX-further-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Additional resources</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text">Python Tutorials</span></a>
+ <span class="menu-text">Data Access</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
- <span class="menu-text">Data Access</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">
@@ -483,13 +456,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
  <span class="menu-text">Using Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/02_Using_Data.html" class="sidebar-item-text sidebar-link">
@@ -529,13 +502,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
  <span class="menu-text">IO Zarr Database</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/04_Combining_Data.html" class="sidebar-item-text sidebar-link">
@@ -552,33 +525,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text"><img width="100px"></span>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://iioe-2.incois.gov.in/ecsn/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/ecsn.png" width="100px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://oceandecade.org/" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/ocean-decade.png" width="150px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://incois.gov.in/dcc-ior/index.jsp" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/dcc-ior.png" width="150px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.ecopdecade.org/" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/ecop.png" width="150px"></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -596,7 +542,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#download-granules-for-an-extended-period-of-time" id="toc-download-granules-for-an-extended-period-of-time" class="nav-link" data-scroll-target="#download-granules-for-an-extended-period-of-time">Download granules for an extended period of time</a></li>
   <li><a href="#combine-files-together" id="toc-combine-files-together" class="nav-link" data-scroll-target="#combine-files-together">Combine files together</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/Hackweek-ITCOocean/2023-Hackbook/blob/main/python-notebooks/01_earthaccess_Downloader.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/blob/main/python-notebooks/01_earthaccess_Downloader.ipynb" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.dev/nmfs-opensci/NOAAHackDays-2024/blob/main/python-notebooks/01_earthaccess_Downloader.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-opensci/NOAAHackDays-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/nmfs-opensci/NOAAHackDays-2024/blob/main/python-notebooks/01_earthaccess_Downloader.ipynb" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -610,7 +556,7 @@ function googleTranslateElementInit() {
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tutorials</li><li class="breadcrumb-item"><a href="../python-notebooks/00_NASA_Earthdata_Authentication.html">Data Access</a></li><li class="breadcrumb-item"><a href="../python-notebooks/01_earthaccess_Downloader.html">NASA Earth Data</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">NASA Earth Data</h1>
 </div>
@@ -625,7 +571,9 @@ function googleTranslateElementInit() {
   </div>
   
 
+
 </header>
+
 
 <section id="written-by-minh-phan" class="level3">
 <h3 class="anchored" data-anchor-id="written-by-minh-phan">Written by Minh Phan</h3>
@@ -638,7 +586,7 @@ function googleTranslateElementInit() {
 </section>
 <section id="import-necessary-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="import-necessary-libraries">Import necessary libraries</h2>
-<div class="cell" data-tags="[]" data-execution_count="25">
+<div id="08cfe349-f5bc-4092-a7a0-48c38dafeb5d" class="cell" data-tags="[]" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> earthaccess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -649,7 +597,7 @@ function googleTranslateElementInit() {
 <section id="download-data-to-your-local-machine-using-earthaccess-library" class="level2">
 <h2 class="anchored" data-anchor-id="download-data-to-your-local-machine-using-earthaccess-library">Download data to your local machine using earthaccess library</h2>
 <p>Earthaccess library streamlines your downloading, slicing, and searching for granules easier than ever. For cloud-hosted datasets (which is what this tutorial best works with), we choose to download granules to the local machine instead of streaming them to the working Python scripts as some users may not be physically available in the us-west region for streaming to be effective. Local downloading may result in heavy file sizes, but is consistent, and we am also providing some tweaks to save as much as you can, especially if your research interest area requires a long temporal range and does not cover globally.</p>
-<div class="cell" data-tags="[]" data-execution_count="26">
+<div id="92533876-51be-43d5-91c6-72423c8b9a42" class="cell" data-tags="[]" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Log in using .netrc file</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>auth <span class="op">=</span> earthaccess.login(strategy<span class="op">=</span><span class="st">"netrc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -659,7 +607,7 @@ function googleTranslateElementInit() {
 </section>
 <section id="streaming-granules" class="level2">
 <h2 class="anchored" data-anchor-id="streaming-granules">Streaming granules</h2>
-<div class="cell" data-tags="[]" data-execution_count="27">
+<div id="b7594fd0-4e02-4a98-b78b-cbb475230a8c" class="cell" data-tags="[]" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EarthAccess's approach to collecting granules</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> earthaccess.search_data(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    short_name<span class="op">=</span><span class="st">'MUR-JPL-L4-GLOB-v4.1'</span>,</span>
@@ -671,7 +619,7 @@ function googleTranslateElementInit() {
 <pre><code>Granules found: 59</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="28">
+<div id="d5573847-1ed2-4c4c-8a7f-e21e402c3759" class="cell" data-tags="[]" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> earthaccess.<span class="bu">open</span>(results) <span class="co"># s3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Opening 59 granules, approx size: 0.0 GB</code></pre>
@@ -692,13 +640,12 @@ function googleTranslateElementInit() {
 </script>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="29">
+<div id="1afc6db6-4eec-45c0-9f57-fdae4c96f7ae" class="cell" data-tags="[]" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_mfdataset(files)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="30">
+<div id="199448f8-2bc5-418c-976b-3bce74b5e966" class="cell" data-tags="[]" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -1169,7 +1116,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 17999, 36000), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -1248,7 +1195,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 17999, 36000), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -1339,7 +1286,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 17999, 36000), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -1465,10 +1412,9 @@ ice data interpolated by a nearest neighbor approach.
       dtype='float32', name='lon', length=36000))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-b99d39e9-ece1-44d5-9881-49057d18d339" class="xr-section-summary-in" type="checkbox"><label for="section-b99d39e9-ece1-44d5-9881-49057d18d339" class="xr-section-summary">Attributes: <span>(47)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>Conventions :</span></dt><dd>CF-1.5</dd><dt><span>title :</span></dt><dd>Daily MUR SST, Final product</dd><dt><span>summary :</span></dt><dd>A merged, multi-sensor L4 Foundation SST analysis product from JPL.</dd><dt><span>references :</span></dt><dd>http://podaac.jpl.nasa.gov/Multi-scale_Ultra-high_Resolution_MUR-SST</dd><dt><span>institution :</span></dt><dd>Jet Propulsion Laboratory</dd><dt><span>history :</span></dt><dd>created at nominal 4-day latency; replaced nrt (1-day latency) version.</dd><dt><span>comment :</span></dt><dd>MUR = "Multi-scale Ultra-high Reolution"</dd><dt><span>license :</span></dt><dd>These data are available free of charge under data policy of JPL PO.DAAC.</dd><dt><span>id :</span></dt><dd>MUR-JPL-L4-GLOB-v04.1</dd><dt><span>naming_authority :</span></dt><dd>org.ghrsst</dd><dt><span>product_version :</span></dt><dd>04.1</dd><dt><span>uuid :</span></dt><dd>27665bc0-d5fc-11e1-9b23-0800200c9a66</dd><dt><span>gds_version_id :</span></dt><dd>2.0</dd><dt><span>netcdf_version_id :</span></dt><dd>4.1</dd><dt><span>date_created :</span></dt><dd>20150818T185930Z</dd><dt><span>start_time :</span></dt><dd>20030101T090000Z</dd><dt><span>stop_time :</span></dt><dd>20030101T090000Z</dd><dt><span>time_coverage_start :</span></dt><dd>20021231T210000Z</dd><dt><span>time_coverage_end :</span></dt><dd>20030101T210000Z</dd><dt><span>file_quality_level :</span></dt><dd>1</dd><dt><span>source :</span></dt><dd>AMSRE-REMSS, AVHRR_Pathfinder-PFV5.2-NODC_day, AVHRR_Pathfinder-PFV5.2-NODC_night, MODIS_A-JPL, MODIS_T-JPL, iQUAM-NOAA/NESDIS, Ice_Conc-OSISAF</dd><dt><span>platform :</span></dt><dd>Aqua, DMSP, NOAA-POES, Suomi-NPP, Terra</dd><dt><span>sensor :</span></dt><dd>AMSR-E, AVHRR, MODIS, SSM/I, VIIRS, in-situ</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Observation Dataset v1.0</dd><dt><span>metadata_link :</span></dt><dd>http://podaac.jpl.nasa.gov/ws/metadata/dataset/?format=iso&amp;shortName=MUR-JPL-L4-GLOB-v04.1</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature</dd><dt><span>keywords_vocabulary :</span></dt><dd>NASA Global Change Master Directory (GCMD) Science Keywords</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention</dd><dt><span>southernmost_latitude :</span></dt><dd>-90.0</dd><dt><span>northernmost_latitude :</span></dt><dd>90.0</dd><dt><span>westernmost_longitude :</span></dt><dd>-180.0</dd><dt><span>easternmost_longitude :</span></dt><dd>180.0</dd><dt><span>spatial_resolution :</span></dt><dd>0.01 degrees</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees north</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.01 degrees</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees east</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.01 degrees</dd><dt><span>acknowledgment :</span></dt><dd>Please acknowledge the use of these data with the following statement:  These data were provided by JPL under support by NASA MEaSUREs program.</dd><dt><span>creator_name :</span></dt><dd>JPL MUR SST project</dd><dt><span>creator_email :</span></dt><dd>ghrsst@podaac.jpl.nasa.gov</dd><dt><span>creator_url :</span></dt><dd>http://mur.jpl.nasa.gov</dd><dt><span>project :</span></dt><dd>NASA Making Earth Science Data Records for Use in Research Environments (MEaSUREs) Program</dd><dt><span>publisher_name :</span></dt><dd>GHRSST Project Office</dd><dt><span>publisher_url :</span></dt><dd>http://www.ghrsst.org</dd><dt><span>publisher_email :</span></dt><dd>ghrsst-po@nceo.ac.uk</dd><dt><span>processing_level :</span></dt><dd>L4</dd><dt><span>cdm_data_type :</span></dt><dd>grid</dd></dl></div></li></ul></div></div>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="31">
+<div id="2b2e3a5a-9d8e-457b-9c16-c64f7689c196" class="cell" data-tags="[]" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ds.sel(lat<span class="op">=</span><span class="bu">slice</span>(<span class="dv">5</span>, <span class="dv">25</span>), lon<span class="op">=</span><span class="bu">slice</span>(<span class="dv">60</span>, <span class="dv">80</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -1938,7 +1884,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 2001, 2001), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -2017,7 +1963,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 2001, 2001), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -2108,7 +2054,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 2001, 2001), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -2240,7 +2186,7 @@ ice data interpolated by a nearest neighbor approach.
 <p>Since you cannot slice data spatially, downloading granules is going to take up a lot of disk space if you only need data within a small bounding box. For our task, we wrote a simple function to slice data and wrote it into a new file.</p>
 <p>You can consult the <a href="https://earthdata.readthedocs.io/en/latest/tutorials/demo/">earthacess library website</a> or their <a href="https://github.com/nsidc/earthaccess/tree/main/notebooks">notebooks</a> for code snippets on how to browse and look up collections. For this notebook, we mainly focus on the downloading aspect. First, we need to get the list of granules to download.</p>
 <p>Since earthacess does not support spatial slicing, we developed a method to download, slice, combine, and export data yearly, then finally delete temporary downloaded files to save disk space. Assumed that you already knew the temporal, spatial range of the dataset of your chosen, we first download the data by year into a temporary folder, then slice the data and then export the combined data to another folder.</p>
-<div class="cell" data-tags="[]" data-execution_count="32">
+<div id="a9fe5e29-f2d9-4264-b79f-29ba82d801e7" class="cell" data-tags="[]" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Our approach</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Month end not included</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2298,7 +2244,7 @@ ice data interpolated by a nearest neighbor approach.
 <span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lat1_idx, lat2_idx, lon1_idx, lon2_idx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="33">
+<div id="14be425a-27a6-41a3-ba49-a7a6fdda23e2" class="cell" data-tags="[]" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download and combine every month's worth of data</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>download_and_combine_granules(short_name<span class="op">=</span><span class="st">'MUR25-JPL-L4-GLOB-v04.2'</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                          month_start<span class="op">=</span><span class="st">'2003-01'</span>, month_end<span class="op">=</span><span class="st">'2003-03'</span>, </span>
@@ -2344,7 +2290,7 @@ Deleting temporary files...</code></pre>
 </script>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="22">
+<div id="e294ebc8-90f7-4540-8189-59c233284dc1" class="cell" data-tags="[]" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>list_of_missing_dates <span class="op">=</span> [<span class="st">"2003-01-04"</span>, <span class="st">"2003-01-18"</span>, <span class="st">"2003-02-18"</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> list_of_missing_dates:</span>
@@ -2391,10 +2337,9 @@ requests.exceptions.HTTPError: 502 Server Error: Bad Gateway for url: https://ar
 <section id="combine-files-together" class="level2">
 <h2 class="anchored" data-anchor-id="combine-files-together">Combine files together</h2>
 <p>Now that we have all netcdf4 files in one place, all spatially sliced, combining the rest of the data is a piece of cake! Note that some of the data will be overlap in the process of combing data every year earlier, so it’s best practice to remove duplicates (if any)</p>
-<div class="cell" data-tags="[]" data-execution_count="34">
+<div id="c5b40d4e-0c54-41c8-b447-4ea7078e5ad1" class="cell" data-tags="[]" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -2865,7 +2810,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 17999, 36000), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -2944,7 +2889,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 17999, 36000), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -3035,7 +2980,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 17999, 36000), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -3161,12 +3106,11 @@ ice data interpolated by a nearest neighbor approach.
       dtype='float32', name='lon', length=36000))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-be408ed1-38b3-4d2b-a57c-bff98d4db406" class="xr-section-summary-in" type="checkbox"><label for="section-be408ed1-38b3-4d2b-a57c-bff98d4db406" class="xr-section-summary">Attributes: <span>(47)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>Conventions :</span></dt><dd>CF-1.5</dd><dt><span>title :</span></dt><dd>Daily MUR SST, Final product</dd><dt><span>summary :</span></dt><dd>A merged, multi-sensor L4 Foundation SST analysis product from JPL.</dd><dt><span>references :</span></dt><dd>http://podaac.jpl.nasa.gov/Multi-scale_Ultra-high_Resolution_MUR-SST</dd><dt><span>institution :</span></dt><dd>Jet Propulsion Laboratory</dd><dt><span>history :</span></dt><dd>created at nominal 4-day latency; replaced nrt (1-day latency) version.</dd><dt><span>comment :</span></dt><dd>MUR = "Multi-scale Ultra-high Reolution"</dd><dt><span>license :</span></dt><dd>These data are available free of charge under data policy of JPL PO.DAAC.</dd><dt><span>id :</span></dt><dd>MUR-JPL-L4-GLOB-v04.1</dd><dt><span>naming_authority :</span></dt><dd>org.ghrsst</dd><dt><span>product_version :</span></dt><dd>04.1</dd><dt><span>uuid :</span></dt><dd>27665bc0-d5fc-11e1-9b23-0800200c9a66</dd><dt><span>gds_version_id :</span></dt><dd>2.0</dd><dt><span>netcdf_version_id :</span></dt><dd>4.1</dd><dt><span>date_created :</span></dt><dd>20150818T185930Z</dd><dt><span>start_time :</span></dt><dd>20030101T090000Z</dd><dt><span>stop_time :</span></dt><dd>20030101T090000Z</dd><dt><span>time_coverage_start :</span></dt><dd>20021231T210000Z</dd><dt><span>time_coverage_end :</span></dt><dd>20030101T210000Z</dd><dt><span>file_quality_level :</span></dt><dd>1</dd><dt><span>source :</span></dt><dd>AMSRE-REMSS, AVHRR_Pathfinder-PFV5.2-NODC_day, AVHRR_Pathfinder-PFV5.2-NODC_night, MODIS_A-JPL, MODIS_T-JPL, iQUAM-NOAA/NESDIS, Ice_Conc-OSISAF</dd><dt><span>platform :</span></dt><dd>Aqua, DMSP, NOAA-POES, Suomi-NPP, Terra</dd><dt><span>sensor :</span></dt><dd>AMSR-E, AVHRR, MODIS, SSM/I, VIIRS, in-situ</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Observation Dataset v1.0</dd><dt><span>metadata_link :</span></dt><dd>http://podaac.jpl.nasa.gov/ws/metadata/dataset/?format=iso&amp;shortName=MUR-JPL-L4-GLOB-v04.1</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature</dd><dt><span>keywords_vocabulary :</span></dt><dd>NASA Global Change Master Directory (GCMD) Science Keywords</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention</dd><dt><span>southernmost_latitude :</span></dt><dd>-90.0</dd><dt><span>northernmost_latitude :</span></dt><dd>90.0</dd><dt><span>westernmost_longitude :</span></dt><dd>-180.0</dd><dt><span>easternmost_longitude :</span></dt><dd>180.0</dd><dt><span>spatial_resolution :</span></dt><dd>0.01 degrees</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees north</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.01 degrees</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees east</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.01 degrees</dd><dt><span>acknowledgment :</span></dt><dd>Please acknowledge the use of these data with the following statement:  These data were provided by JPL under support by NASA MEaSUREs program.</dd><dt><span>creator_name :</span></dt><dd>JPL MUR SST project</dd><dt><span>creator_email :</span></dt><dd>ghrsst@podaac.jpl.nasa.gov</dd><dt><span>creator_url :</span></dt><dd>http://mur.jpl.nasa.gov</dd><dt><span>project :</span></dt><dd>NASA Making Earth Science Data Records for Use in Research Environments (MEaSUREs) Program</dd><dt><span>publisher_name :</span></dt><dd>GHRSST Project Office</dd><dt><span>publisher_url :</span></dt><dd>http://www.ghrsst.org</dd><dt><span>publisher_email :</span></dt><dd>ghrsst-po@nceo.ac.uk</dd><dt><span>processing_level :</span></dt><dd>L4</dd><dt><span>cdm_data_type :</span></dt><dd>grid</dd></dl></div></li></ul></div></div>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="23">
+<div id="3450b4dd-6657-43e6-8693-95d642f916ac" class="cell" data-tags="[]" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>combined <span class="op">=</span> xr.open_mfdataset(<span class="st">'demonstrated data/earth_data/MUR25-JPL-L4-GLOB-v04.2/*.nc'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>combined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -3654,7 +3598,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(29, 80, 80), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -3737,7 +3681,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(29, 80, 80), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -3828,7 +3772,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(29, 80, 80), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -3915,7 +3859,7 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(29, 80, 80), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>long_name :</span></dt>
@@ -4038,11 +3982,10 @@ anomaly reference to the day-of-year average between 2003 and 2014
 <p>You can see that we do not need all variables: let’s take a look into each and see what we need.</p>
 <p>The data is “chunked” (broke down into smaller, more mangaeable pieces to eliminate duplicated copies of repeating data on storage). Therefore you can’t see the actual data if you clicking on the interactive panel above, as it is lazy-loaded to only show the general information of the whole object.</p>
 <p>Simply load the dataset to see the actual underlying data values</p>
-<div class="cell" data-tags="[]" data-execution_count="35">
+<div id="df22c8e9-9399-4ce1-a4fe-af58aaf41df9" class="cell" data-tags="[]" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load sst_anomaly to see underlying data</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>combined.sst_anomaly.compute()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -4641,6 +4584,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -4707,13 +4677,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -4792,10 +4764,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -4805,8 +4776,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -4819,6 +4799,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -4862,6 +4964,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -4887,6 +4990,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -4948,12 +5077,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="pagination-link">
+      <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="pagination-link  aria-label=" authentication="" for="" nasa="" earthdata"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Authentication for NASA Earthdata</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../python-notebooks/01_ERA5_S3_Downloader.html" class="pagination-link">
+      <a href="../python-notebooks/01_ERA5_S3_Downloader.html" class="pagination-link" aria-label="Download Copernicus ERA5 Data with S3 without logging in">
         <span class="nav-page-text">Download Copernicus ERA5 Data with S3 without logging in</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -4964,12 +5093,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><img src="../images/incois.png" alt="INCOIS logo" style="width:150px"><br>ITCOocean Hack2week (2023)</div>
+    <div class="nav-footer-center">
+<p><img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="NMFS Open Science logo" style="width:150px"><br>NMFS Open Science (2023)</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

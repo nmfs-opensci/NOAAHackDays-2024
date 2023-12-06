@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 ITCOocean Hack2week - Download sliced data using MOTU-Client in Copernicus</title>
+<title>2024 NOAA HackDays - Download sliced data using MOTU-Client in Copernicus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../python-notebooks/02_Using_Data.html" rel="next">
 <link href="../python-notebooks/01_ERDDAP_Downloader.html" rel="prev">
-<link href="../images/incois-icon.png" rel="icon" type="image/png">
+<link href="../https://raw.githubusercontent.com/nmfs-opensci/assets/main/favicon/favicon-16x16.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -93,11 +99,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -108,11 +115,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">2023 ITCOocean Hack2week</span>
+    <span class="navbar-title">2024 NOAA HackDays</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -122,30 +129,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://itcoocean.2i2c.cloud/" rel="" target=""><i class="bi bi-server" role="img">
+    <a class="nav-link" href="https://dhub.opensci.live/"> <i class="bi bi-server" role="img">
 </i> 
- <span class="menu-text">JupyterHub</span></a>
+<span class="menu-text">JupyterHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/orgs/Hackweek-ITCOocean/discussions" rel="" target=""><i class="bi bi-wechat" role="img">
+    <a class="nav-link" href="https://github.com/orgs/nmfs-opensci/discussions"> <i class="bi bi-wechat" role="img">
 </i> 
- <span class="menu-text">Discussions</span></a>
+<span class="menu-text">Discussions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://app.slack.com/client/T05PV2USY56/C05P7QP47UL" rel="" target=""><i class="bi bi-slack" role="img">
+    <a class="nav-link" href="https://github.com/nmfs-opensci"> <i class="bi bi-globe" role="img">
 </i> 
- <span class="menu-text">Slack</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/Hackweek-ITCOocean" rel="" target=""><i class="bi bi-globe" role="img">
-</i> 
- <span class="menu-text">GH org</span></a>
+<span class="menu-text">GH org</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -153,9 +155,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tutorials</li><li class="breadcrumb-item"><a href="../python-notebooks/00_NASA_Earthdata_Authentication.html">Data Access</a></li><li class="breadcrumb-item"><a href="../python-notebooks/01_MOTU_Downloader.html">Download sliced data using MOTU-Client in Copernicus</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tutorials</li><li class="breadcrumb-item"><a href="../python-notebooks/00_NASA_Earthdata_Authentication.html">Data Access</a></li><li class="breadcrumb-item"><a href="../python-notebooks/01_MOTU_Downloader.html">Download sliced data using MOTU-Client in Copernicus</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -165,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/incois-logos.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -189,12 +191,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Our Team</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -376,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-tutorials/SDM-lab1.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../r-tutorials/SDM-lab1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SDM 1</span></a>
   </div>
 </li>
@@ -409,45 +405,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
- <span class="menu-text">Further Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text">Python Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/XX-r-and-python-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R and Python Resources</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/XX-further-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Additional resources</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text">Python Tutorials</span></a>
+ <span class="menu-text">Data Access</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
- <span class="menu-text">Data Access</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/00_NASA_Earthdata_Authentication.html" class="sidebar-item-text sidebar-link">
@@ -482,13 +455,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
  <span class="menu-text">Using Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/02_Using_Data.html" class="sidebar-item-text sidebar-link">
@@ -528,13 +501,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
  <span class="menu-text">IO Zarr Database</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python-notebooks/04_Combining_Data.html" class="sidebar-item-text sidebar-link">
@@ -551,33 +524,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text"><img width="100px"></span>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://iioe-2.incois.gov.in/ecsn/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/ecsn.png" width="100px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://oceandecade.org/" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/ocean-decade.png" width="150px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://incois.gov.in/dcc-ior/index.jsp" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/dcc-ior.png" width="150px"></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.ecopdecade.org/" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><img src="../images/ecop.png" width="150px"></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -595,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#combine-data" id="toc-combine-data" class="nav-link" data-scroll-target="#combine-data">Combine data</a></li>
   <li><a href="#additional-data-clean-later" id="toc-additional-data-clean-later" class="nav-link" data-scroll-target="#additional-data-clean-later">Additional data (clean later)</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/Hackweek-ITCOocean/2023-Hackbook/blob/main/python-notebooks/01_MOTU_Downloader.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/Hackweek-ITCOocean/2023-Hackbook/blob/main/python-notebooks/01_MOTU_Downloader.ipynb" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.dev/nmfs-opensci/NOAAHackDays-2024/blob/main/python-notebooks/01_MOTU_Downloader.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nmfs-opensci/NOAAHackDays-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/nmfs-opensci/NOAAHackDays-2024/blob/main/python-notebooks/01_MOTU_Downloader.ipynb" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -609,7 +555,7 @@ function googleTranslateElementInit() {
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tutorials</li><li class="breadcrumb-item"><a href="../python-notebooks/00_NASA_Earthdata_Authentication.html">Data Access</a></li><li class="breadcrumb-item"><a href="../python-notebooks/01_MOTU_Downloader.html">Download sliced data using MOTU-Client in Copernicus</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Download sliced data using MOTU-Client in Copernicus</h1>
 </div>
@@ -624,14 +570,16 @@ function googleTranslateElementInit() {
   </div>
   
 
+
 </header>
+
 
 <section id="written-by-minh-phan" class="level3">
 <h3 class="anchored" data-anchor-id="written-by-minh-phan">Written by Minh Phan</h3>
 <p><strong>WE DO NOT USE DATA GENERATED FROM THIS NOTEBOOK IN OUR DEMO</strong></p>
 <p>Most of our data is obtained from Copernicus, “the Earth Observation component of the European Union’s space programme, looking at our planet and its environment for the benefit of Europe’s citizens” (copernicus.eu). Copernicus data, aside from traditional download methods using ERDDAP, also offers downloading using MOTU Service, “a Web Server allowing to handle and extract oceanographic huge volumes of data, creating the connection between heterogeneous data providers and end-users” (help.marine.copernicus.eu), if available. More information on MOTU can be accessed <a href="https://help.marine.copernicus.eu/en/articles/4796533-what-are-the-motu-apis">here</a>.</p>
 <p>Make sure to register for a Copernicus account in order to access the data.</p>
-<div class="cell" data-tags="[]" data-execution_count="1">
+<div id="1e448485-49db-4c7d-a9e1-477bbab45cae" class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> pip install motuclient</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Collecting motuclient
@@ -647,22 +595,22 @@ Successfully installed motuclient-3.0.0</code></pre>
 <h2 class="anchored" data-anchor-id="store-credentials-in-bash">Store credentials in bash</h2>
 <p>For security purposes, you can store your account credentials in your bash profile if you don’t want others to know yours. If you fork this notebook on your local machine and are sure that your credentials cannot be exposed anywhere else, you can skip the hassle of saving them to bash and set them as Python variables, then feed them to the prompt generator.</p>
 <p>Make sure to change your username and password of your Copernicus/MOTU account to the two lines below for bash…</p>
-<div class="cell" data-tags="[]" data-execution_count="52">
+<div id="7526565e-3a1f-4c6d-bd4b-aab0a344587b" class="cell" data-tags="[]" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> echo <span class="st">'export motu_password=YOURPASSWORD'</span> <span class="op">&gt;~/</span>.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="54">
+<div id="b6c2ffaa-1817-40fb-88fa-2c975e2fb1de" class="cell" data-tags="[]" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> echo <span class="st">'export motu_username=YOURUSERNAME'</span> <span class="op">&gt;&gt;~/</span>.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="6">
+<div id="fb5290ed-0280-4ff1-9161-d3190a1b2110" class="cell" data-tags="[]" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vim will get stuck in this cell if you don't stop the cell. As soon as you see the two lines</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># stop the execution and move on to the next cell.</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> vim <span class="op">~/</span>.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="58">
+<div id="65ab25ee-5641-4c6e-8271-8baf4c203ab2" class="cell" data-tags="[]" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> source <span class="op">~/</span>.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>IMPORTANT</strong> Please restart your server for the changes to take effect</p>
-<div class="cell" data-tags="[]" data-execution_count="48">
+<div id="62925d03-ca94-4f3a-8582-57eb5df58761" class="cell" data-tags="[]" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># confirm that it is shown before proceeding</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> echo $motu_username</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -681,7 +629,7 @@ python -m motuclient –motu https://my.cmems-du.eu/motu-web/Motu –service-id 
 </section>
 <section id="import-necessary-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="import-necessary-libraries">Import necessary libraries</h2>
-<div class="cell" data-tags="[]" data-execution_count="13">
+<div id="ea29bec4-f2f5-46c7-b30a-3126b89ce22f" class="cell" data-tags="[]" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -691,7 +639,7 @@ python -m motuclient –motu https://my.cmems-du.eu/motu-web/Motu –service-id 
 </section>
 <section id="download-data" class="level2">
 <h2 class="anchored" data-anchor-id="download-data">Download data</h2>
-<div class="cell" data-tags="[]" data-execution_count="16">
+<div id="c1f058a4-46f2-4ecc-836b-4b9a05c88c07" class="cell" data-tags="[]" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prompt_generator(params, temp_folder_path):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    months <span class="op">=</span> pd.date_range(params[<span class="st">'coords'</span>][<span class="st">'date-min'</span>], params[<span class="st">'coords'</span>][<span class="st">'date-max'</span>], freq<span class="op">=</span><span class="st">'M'</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    prompts <span class="op">=</span> []</span>
@@ -729,7 +677,7 @@ python -m motuclient –motu https://my.cmems-du.eu/motu-web/Motu –service-id 
 <span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we’re going to initialize our parameters to download the data. The template is shown below, and werecommend you to choose a spatial range slightly larger than your actual region of interest due to cutoffs that may happen at the edges.</p>
-<div class="cell" data-tags="[]" data-execution_count="20">
+<div id="95d3596e-1e0e-4ea7-b955-fcb861dcd1b2" class="cell" data-tags="[]" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modify your parameters as you wish to feed into prompt generator</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># here's mine to download chlorophyll-a data</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>var_chlorophyll <span class="op">=</span> {</span>
@@ -762,7 +710,7 @@ python -m motuclient –motu https://my.cmems-du.eu/motu-web/Motu –service-id 
 <span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:true}" data-tags="[]" data-execution_count="17">
+<div id="ac963289-af1a-4c65-8182-6ae2d31923fa" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:true}" data-tags="[]" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>download_motu_api(var_sla)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2023-07-11 04:31:55.819 [ INFO] Asynchronous mode set
@@ -2315,19 +2263,18 @@ python -m motuclient –motu https://my.cmems-du.eu/motu-web/Motu –service-id 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01_MOTU_Downloader_files/figure-html/f4e22ba6-7eb1-461f-bae3-4168bb007d8a-1-96356e5d-b6e3-417c-92ec-f050da344fb1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">image.png</figcaption>
+<figcaption>image.png</figcaption>
 </figure>
 </div>
 </section>
 <section id="combine-data" class="level2">
 <h2 class="anchored" data-anchor-id="combine-data">Combine data</h2>
-<div class="cell" data-tags="[]" data-execution_count="18">
+<div id="345465f5-a793-4f2d-875b-0fd9cc80e6f5" class="cell" data-tags="[]" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_mfdataset(<span class="st">'demonstrated data/motu/cmems_obs-sl_glo_phy-ssh_my_allsat-l4-duacs-0.25deg_P1D//*.nc'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="19">
+<div id="23461f04-a0f3-4d72-9522-bd202ae038b9" class="cell" data-tags="[]" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -2776,7 +2723,7 @@ int32
 <div class="xr-var-preview xr-preview">
 -2147483647 ... -2147483647
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>comment :</span></dt>
@@ -2860,7 +2807,7 @@ float64
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(31, 81, 81), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiIgLz48L3N2Zz4=" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIiAvPjwvc3ZnPg==" class="icon xr-icon-database img-fluid">
 <div class="xr-var-attrs">
 <dl>
 <dt><span>ancillary_variables :</span></dt>
@@ -2935,35 +2882,28 @@ m
 </tbody>
 </table>
 </div>
-
 </div></li></ul></div></li><li class="xr-section-item"><input id="section-c973f337-dd60-4289-bb61-c55f9e037312" class="xr-section-summary-in" type="checkbox"><label for="section-c973f337-dd60-4289-bb61-c55f9e037312" class="xr-section-summary">Attributes: <span>(45)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>FROM_ORIGINAL_FILE__Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>comment :</span></dt><dd>Sea Surface Height measured by Altimetry and derived variables</dd><dt><span>contact :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_email :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_name :</span></dt><dd>CMEMS - Sea Level Thematic Assembly Center</dd><dt><span>creator_url :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>date_created :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>date_issued :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>date_modified :</span></dt><dd>2023-03-01T17:56:26Z</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_max :</span></dt><dd>89.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_min :</span></dt><dd>-89.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_resolution :</span></dt><dd>0.25</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_max :</span></dt><dd>179.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_min :</span></dt><dd>-179.875</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_resolution :</span></dt><dd>0.25</dd><dt><span>FROM_ORIGINAL_FILE__geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>down</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>point</dd><dt><span>geospatial_vertical_units :</span></dt><dd>m</dd><dt><span>history :</span></dt><dd>2023-03-01 17:56:27Z: Creation</dd><dt><span>institution :</span></dt><dd>CLS, CNES</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Topography &gt; Sea Surface Height</dd><dt><span>keywords_vocabulary :</span></dt><dd>NetCDF COARDS Climate and Forecast Standard Names</dd><dt><span>license :</span></dt><dd>http://marine.copernicus.eu/web/27-service-commitments-and-licence.php</dd><dt><span>FROM_ORIGINAL_FILE__platform :</span></dt><dd>Altika Drifting Phase, Cryosat-2 New Orbit, Haiyang-2B, Jason-3 Interleaved, Sentinel-3A, Sentinel-3B, Sentinel-6A</dd><dt><span>processing_level :</span></dt><dd>L4</dd><dt><span>FROM_ORIGINAL_FILE__product_version :</span></dt><dd>vDec2021</dd><dt><span>project :</span></dt><dd>COPERNICUS MARINE ENVIRONMENT MONITORING SERVICE (CMEMS)</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>FROM_ORIGINAL_FILE__software_version :</span></dt><dd>7.1_DUACS_DT2021_baseline</dd><dt><span>source :</span></dt><dd>Altimetry measurements</dd><dt><span>ssalto_duacs_comment :</span></dt><dd>The reference mission used for the altimeter inter-calibration processing is Topex/Poseidon between 1993-01-01 and 2002-04-23, Jason-1 between 2002-04-24 and 2008-10-18, OSTM/Jason-2 between 2008-10-19 and 2016-06-25, Jason-3 between 2016-06-25 and 2022-02-09, and Sentinel-6A from 2022-02-10.</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention Standard Name Table v37</dd><dt><span>summary :</span></dt><dd>SSALTO/DUACS Delayed-Time Level-4 sea surface height and derived variables measured by multi-satellite altimetry observations over Global Ocean.</dd><dt><span>time_coverage_duration :</span></dt><dd>P1D</dd><dt><span>time_coverage_end :</span></dt><dd>2022-08-04T12:00:00Z</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1D</dd><dt><span>time_coverage_start :</span></dt><dd>2022-08-03T12:00:00Z</dd><dt><span>title :</span></dt><dd>DT merged all satellites Global Ocean Gridded SSALTO/DUACS Sea Surface Height L4 product and derived variables</dd><dt><span>_CoordSysBuilder :</span></dt><dd>ucar.nc2.dataset.conv.CF1Convention</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 </section>
 <section id="additional-data-clean-later" class="level1">
 <h1>Additional data (clean later)</h1>
-<div class="cell" data-tags="[]" data-execution_count="19">
+<div id="a3cca25e-d615-4dfa-8e4f-78ea04b0b111" class="cell" data-tags="[]" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">8</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">10</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>&lt;matplotlib.image.AxesImage at 0x7fbfea436e50&gt;</code></pre>
-</div>
 <div class="cell-output cell-output-display">
-<p><img src="01_MOTU_Downloader_files/figure-html/cell-14-output-2.png" class="img-fluid"></p>
+<p><img src="01_MOTU_Downloader_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">120</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">240</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">360</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
-<pre><code>&lt;matplotlib.image.AxesImage at 0x7fbfe05db790&gt;</code></pre>
-</div>
+<div id="82398454-9728-4dfc-9e27-7120ec37c939" class="cell" data-tags="[]" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">120</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">0</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">240</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">0</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>motu.isel(time<span class="op">=</span><span class="dv">360</span>, depth<span class="op">=</span><span class="dv">0</span>)[<span class="st">'po4'</span>].plot.imshow(ax<span class="op">=</span>axs[<span class="dv">1</span>][<span class="dv">1</span>], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="01_MOTU_Downloader_files/figure-html/cell-15-output-2.png" class="img-fluid"></p>
+<p><img src="01_MOTU_Downloader_files/figure-html/cell-15-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 
@@ -3012,6 +2952,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -3080,13 +3047,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -3165,10 +3134,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -3178,8 +3146,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -3192,6 +3169,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -3235,6 +3334,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -3260,6 +3360,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -3321,12 +3447,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../python-notebooks/01_ERDDAP_Downloader.html" class="pagination-link">
+      <a href="../python-notebooks/01_ERDDAP_Downloader.html" class="pagination-link  aria-label=" download="" data="" from="" noaa="" erddap="" using="" griddap"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Download data from NOAA ERDDAP using GRIDDAP</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../python-notebooks/02_Using_Data.html" class="pagination-link">
+      <a href="../python-notebooks/02_Using_Data.html" class="pagination-link" aria-label="IO Zarr file">
         <span class="nav-page-text">IO Zarr file</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -3337,12 +3463,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><img src="../images/incois.png" alt="INCOIS logo" style="width:150px"><br>ITCOocean Hack2week (2023)</div>
+    <div class="nav-footer-center">
+<p><img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="NMFS Open Science logo" style="width:150px"><br>NMFS Open Science (2023)</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
