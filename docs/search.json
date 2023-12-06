@@ -15,7 +15,7 @@
     "href": "setup.html",
     "title": "Set-up",
     "section": "",
-    "text": "Before the course, please do the following set-up and send us the information in the pre-course survey.",
+    "text": "Before the course, please do the following set-up and send us the information in the pre-course survey (link posted before the event).",
     "crumbs": [
       "Welcome",
       "Set-up"
@@ -26,29 +26,18 @@
     "href": "setup.html#user-accounts",
     "title": "Set-up",
     "section": "User accounts",
-    "text": "User accounts\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Advice for choosing a GitHub username: this is a professional username that you will use in work/academic communities. GitHub accounts are not anonymous; this is for sharing work. Using your real name is common.\nRemember your username and password; you will need to be logged in during the course!\nHere is a video showing the whole process\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the course!\n\nSlack account\n\nWe will use Slack as our messaging platform during the course. Feel free to use to communicate and coordinate with the fellow course participants.\nThe link to join our Slack workspace was sent on Sept 4th in the course info email.\nReach out to the organizers if you can’t find the email.",
+    "text": "User accounts\n\nGitHub username\n\nCreate a GitHub account (if you don’t already have one) at https://github.com. Advice for choosing a GitHub username: this is a professional username that you will use in work/academic communities. GitHub accounts are not anonymous; this is for sharing work. Using your real name is common.\nRemember your username and password; you will need to be logged in during the course!\nHere is a video showing the whole process\n\nEarthdata Login account\n\nCreate an Earthdata Login account (if you don’t already have one) at https://urs.earthdata.nasa.gov\nRemember your username and password; you will need to be logged in during the course!",
     "crumbs": [
       "Welcome",
       "Set-up"
     ]
   },
   {
-    "objectID": "setup.html#install-r-and-rstudio-desktop",
-    "href": "setup.html#install-r-and-rstudio-desktop",
+    "objectID": "setup.html#intro-to-r-courses",
+    "href": "setup.html#intro-to-r-courses",
     "title": "Set-up",
-    "section": "Install R and RStudio Desktop",
-    "text": "Install R and RStudio Desktop\nFor the course, we will mainly be using a browser based platform (JupyterHub) for coding and projects. JupyterHub and JupyterLab is a standard platform for “big data geoscience” and working on this platform will prepare you for using the tools and notebooks developed by this research community. However we also want you to be able to run R and RStudio on your own computer.\n\nR: https://cran.r-project.org/\n\nInstall the latest version of R that you can for your operating system. Preferably you want version 4.3+ but at the least you need version 4.1.\nIf you have R already installed, update to the newest version (4.3)\n\nRStudio Desktop: https://posit.co/download/rstudio-desktop/\n\nInstall the most recent version you can. Update your version if you have an old version installed.",
-    "crumbs": [
-      "Welcome",
-      "Set-up"
-    ]
-  },
-  {
-    "objectID": "setup.html#do-an-intro-to-r-course",
-    "href": "setup.html#do-an-intro-to-r-course",
-    "title": "Set-up",
-    "section": "Do an intro to R course",
-    "text": "Do an intro to R course\nFor the course and hackweek, we require that you complete a short introduction course to R and RStudio–unless you already have R experience. This way you will be ready to start working with the course scripts and tutorials on day 1. These will only take you a 2-3 hours and will make your course experience much more worthwhile.\nAny of these is sufficient. Note, if you already program in R, you do not need to do this.\n\nW3Schools Basic R\nBasics of R and installing RStudio\nYouTube: R for Beginners\nFor a longer free course, CodeAcademy has a good Intro to R. Note this is 20 hours. You do NOT need to do this whole course before the hackweek!\nIf you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2:\nOne of the best free R courses is Coursera’s Learn R. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.\n\n\nGitHub Discussion Board\nWe will use GitHub Discussion boards for communication during the course. If you like, you can install the GitHub app on your phone and get updates when there are announcements.",
+    "section": "Intro to R courses",
+    "text": "Intro to R courses\nIf you are unfamiliar with R, these will only take you a 2-3 hours and will make your experience much more worthwhile.\n\nW3Schools Basic R\nBasics of R and installing RStudio\nYouTube: R for Beginners\nFor a longer free course, CodeAcademy has a good Intro to R. Note this is 20 hours. You do NOT need to do this whole course before the hackweek!\nIf you know the basics of R but have never done modeling, then you can start with this 2.5 hour course that covers basic linear regression with R and plotting with ggplot2:\nOne of the best free R courses is Coursera’s Learn R. You can see the lectures for free. Make sure to click AUDIT when it asks you to sign up for a 7-day trial. You do not need to sign up for anything to go through the material.",
     "crumbs": [
       "Welcome",
       "Set-up"
