@@ -37,7 +37,7 @@ Detailed self-paced lesson on [Fundamentals of Geospatial Raster and Vector Data
 
 ## Jupyter Notebooks in Earth Sciences
 
-There are many Jupyter Notebooks that you can copy and run in our JupyterHub. Note the ITCOocean JupyterHub is set up for geospatial research and connection to NASA's data in the cloud. It is also set up for parallel processing with Dask. 
+There are many Jupyter Notebooks that you can copy and run in our JupyterHub. Note our JupyterHub is set up for geospatial research and connection to NASA's data in the cloud. It is also set up for parallel processing with Dask. 
 
 - [NASA Cloud Hackweek 2022](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/) 
 - [OceanHackWeek](https://oceanhackweek.org)

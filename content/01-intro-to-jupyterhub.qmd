@@ -21,13 +21,12 @@ In this lab, you will get an overview of our JupyterHub
 
 ## Log into the JupyterHub
 
-Go to <https://itcoocean.2i2c.cloud/>. Click "Login to continue". You will be asked to log in with your GitHub Account, if you are not logged in already.
+Go to <https://dhub.opensci.live/>. Click "Login to continue". You will be asked to log in with your GitHub Account, if you are not logged in already.
 
-![ITCOocean JupyterHub Login](./img/jhub.png)
 
 ### Image type: Python or R
 
-Next you select your image type. We have two different R images and two Python images. The default is "Geospatial R with SDM". This is an image with geospatial libraries and species distribution libraries.
+Next you select your image type. We have two different R images and two Python images. The images have geospatial libraries pre-loaded.
 
 ### Virtual Machine size
 
@@ -69,7 +68,7 @@ You log out from the Jupyter Lab tab not the RStudio tab.
 
 ::: {.callout-tip}
 
-Can't find the Jupyter Lab tab? Go to https://itcoocean.2i2c.cloud/hub/home
+Can't find the Jupyter Lab tab? Go to https://dhub.opensci.live/hub/home
 :::
 
 ## Restart your server
@@ -91,10 +90,10 @@ Logging out will **NOT** cause any of your work to be lost or deleted. It simply
 
 ![Shared folder](./img/shared-folder.png)
 
-In the file panel, you will see a folder called `shared`. These are read-only shared files that we have prepared for you. There are two main folders:
+In the file panel, you will see a folder called `shared`. These are read-only shared files. There are two main folders:
 
 * `data` The folder with data files
-* `2023-Hackbook` The full Git repository with the files for https://hackweek-itcoocean.github.io/2023-Hackbook
+* `2023-Hackbook` The full Git repository with this website
 
 You will also see `shared-public`. This is a read-write folder for you to put files for everyone to see and use. You can create a team folder here for shared data and files.  Note, everyone can see and change these so be careful to communicate with your team so multiple people don't work on the same file at the same time. You can also create folders for each team member and agree not to change other team members files.
 
@@ -113,9 +112,6 @@ Jupyter notebooks are a very common way to share Python code and tutorials. Beca
 
 
 ## FAQ
-
-**Can we use Matlab with JupyterHub?** You can use [Octave kernel](https://datascience-enthusiast.com/Miscellaneous/Jupyter_R_Python_Julia_Octave.html) as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so [jupyter-matlab-proxy](https://github.com/mathworks/jupyter-matlab-proxy)
-
 
 **Why do we have the same home directory as /home/jovyan?** /home/jovyan is the default home directory for 'jupyter' based images/dockers. It is the historic home directory for Jupyter deployments. 
 

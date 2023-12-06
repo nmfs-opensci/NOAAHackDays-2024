@@ -14,7 +14,7 @@ In this lab, you will learn how to
 
 ## Import a GitHub repository
 
-1. In your browser, navigate to <https://github.com/Hackweek-ITCOocean/Quarto-Website>
+1. In your browser, navigate to <https://github.com/nmfs-opensci/Quarto-Website>
 2. Copy the URL
 3. Click on the "+" in the top right (on GitHub) and select "import repository"
 4. Follow instructions to import to your GitHub account

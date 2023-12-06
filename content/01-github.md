@@ -83,8 +83,6 @@ Create a profile page for your GitHub account. *Already have one? Be a helper fo
 2. Add a file by clicking "Add File" and name the file "README.md". This will become a profile page for your GitHub account.
 3. Add some text to the README. You can use this as a template or use one of the many examples of profile READMEs that you can copy here: https://github.com/abhisheknaiidu/awesome-github-profile-readme
 
-Note you can copy and paste in Devanāgarī script (for example 
-महासागर) into the markdown.
 
 Example profile README
 ```
@@ -95,6 +93,6 @@ Example profile README
 - :game: When I am not working, I like to **XYZ**
 - At the Hackweek, ask me about <some areas of expertise>
 
-- 🌐 Visit my [website](https://https://hackweek-itcoocean.github.io//) for complete background and contact.
+- 🌐 Visit my [website](https://eeholmes.github.io//) for complete background and contact.
 ```
 

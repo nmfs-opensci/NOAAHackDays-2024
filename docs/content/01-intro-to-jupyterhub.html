@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">JupyterHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/orgs/nmfs-opensci/discussions"> <i class="bi bi-wechat" role="img">
+    <a class="nav-link" href="https://github.com/nmfs-opensci/NOAAHackDays-2024/discussions"> <i class="bi bi-wechat" role="img">
 </i> 
 <span class="menu-text">Discussions</span></a>
   </li>  
@@ -166,12 +166,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Acknowledgements</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hackweek-links.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hackweek Links</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -487,6 +481,15 @@ ul.task-list li input[type="checkbox"] {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+ <span class="menu-text"><img width="100px"></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://fisheries.noaa.gov" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><img src="../images/noaa_emblem_logo-2022.png" width="100px"></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -562,16 +565,10 @@ Goals
 </div>
 <section id="log-into-the-jupyterhub" class="level2">
 <h2 class="anchored" data-anchor-id="log-into-the-jupyterhub">Log into the JupyterHub</h2>
-<p>Go to <a href="https://itcoocean.2i2c.cloud/" class="uri">https://itcoocean.2i2c.cloud/</a>. Click “Login to continue”. You will be asked to log in with your GitHub Account, if you are not logged in already.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./img/jhub.png" class="img-fluid figure-img"></p>
-<figcaption>ITCOocean JupyterHub Login</figcaption>
-</figure>
-</div>
+<p>Go to <a href="https://dhub.opensci.live/" class="uri">https://dhub.opensci.live/</a>. Click “Login to continue”. You will be asked to log in with your GitHub Account, if you are not logged in already.</p>
 <section id="image-type-python-or-r" class="level3">
 <h3 class="anchored" data-anchor-id="image-type-python-or-r">Image type: Python or R</h3>
-<p>Next you select your image type. We have two different R images and two Python images. The default is “Geospatial R with SDM”. This is an image with geospatial libraries and species distribution libraries.</p>
+<p>Next you select your image type. We have two different R images and two Python images. The images have geospatial libraries pre-loaded.</p>
 </section>
 <section id="virtual-machine-size" class="level3">
 <h3 class="anchored" data-anchor-id="virtual-machine-size">Virtual Machine size</h3>
@@ -639,7 +636,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Can’t find the Jupyter Lab tab? Go to https://itcoocean.2i2c.cloud/hub/home</p>
+<p>Can’t find the Jupyter Lab tab? Go to https://dhub.opensci.live/hub/home</p>
 </div>
 </div>
 </section>
@@ -664,10 +661,10 @@ Tip
 <figcaption>Shared folder</figcaption>
 </figure>
 </div>
-<p>In the file panel, you will see a folder called <code>shared</code>. These are read-only shared files that we have prepared for you. There are two main folders:</p>
+<p>In the file panel, you will see a folder called <code>shared</code>. These are read-only shared files. There are two main folders:</p>
 <ul>
 <li><code>data</code> The folder with data files</li>
-<li><code>2023-Hackbook</code> The full Git repository with the files for https://hackweek-itcoocean.github.io/2023-Hackbook</li>
+<li><code>2023-Hackbook</code> The full Git repository with this website</li>
 </ul>
 <p>You will also see <code>shared-public</code>. This is a read-write folder for you to put files for everyone to see and use. You can create a team folder here for shared data and files. Note, everyone can see and change these so be careful to communicate with your team so multiple people don’t work on the same file at the same time. You can also create folders for each team member and agree not to change other team members files.</p>
 <p>You will also see other folders of Python content for the Python users. We will have a separate introduction to Jupyter Notebooks.</p>
@@ -686,7 +683,6 @@ Tip
 </section>
 <section id="faq" class="level2">
 <h2 class="anchored" data-anchor-id="faq">FAQ</h2>
-<p><strong>Can we use Matlab with JupyterHub?</strong> You can use <a href="https://datascience-enthusiast.com/Miscellaneous/Jupyter_R_Python_Julia_Octave.html">Octave kernel</a> as a Matlab replacement. It is open source and free. If you want to integrate Matlab, there is a project to do so <a href="https://github.com/mathworks/jupyter-matlab-proxy">jupyter-matlab-proxy</a></p>
 <p><strong>Why do we have the same home directory as /home/jovyan?</strong> /home/jovyan is the default home directory for ‘jupyter’ based images/dockers. It is the historic home directory for Jupyter deployments.</p>
 <p><strong>Can other users see the files in my /home/jovyan folder?</strong> No, other users can not see your credentials.</p>
 <section id="acknowledgements" class="level3">

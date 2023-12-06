@@ -109,7 +109,7 @@ In the far left, you will see a line of icons. The top one is a folder and allow
 
 Version control is managing and tracking changes to your documents (program source code, images, websites, data files, etc.). `git` is a popular tool used for version control of software code. [github.com](https://github.com/) is popular platform that provides remote server hosting for git repositories. A repository is a collection of various files that you are tracking for changes and versions. Currently GitHub is the most popular platform for file sharing code and code packages.
 
-This section is a step-by-step guide to set up `git` on our [2i2c JupyterHub](itcoocean.2i2c.cloud). We will also configure `git` to use your [github.com](https://github.com/) account for managing your repositories hosted on [github.com](https://github.com/). There are 5 main steps.
+This section is a step-by-step guide to set up `git` on our [JupyterHub](https://dhub.opensci.live/). We will also configure `git` to use your [github.com](https://github.com/) account for managing your repositories hosted on [github.com](https://github.com/). There are 5 main steps.
 
 ### Step 1: Create a GitHub account
 
@@ -119,9 +119,9 @@ To complete the setup, you will need an account on [github.com](https://github.c
 
 We have created a demo repository for you to clone:
 
-https://github.com/Hackweek-ITCOocean/Git-Lesson
+https://github.com/nmfs-opensci/Git-Lesson
 
-1.  Start your [2i2c JupyterHub](https://itcoocean.2i2c.cloud)
+1.  Start your [JupyterHub](https://dhub.opensci.live/)
 
 2.  Click on the Git icon
 
@@ -129,7 +129,7 @@ https://github.com/Hackweek-ITCOocean/Git-Lesson
 
 3.  Click "Clone a Repository"
 
-4.  Where is says "Enter the URI of the remote Git repository", paste in the URL https://github.com/Hackweek-ITCOocean/Git-Lesson
+4.  Where is says "Enter the URI of the remote Git repository", paste in the URL https://github.com/nmfs-opensci/Git-Lesson
 
 5. The folder appears and you can enter the folder and edit and create files.
 

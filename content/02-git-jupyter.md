@@ -97,7 +97,7 @@ In the far left, you will see a line of icons. The top one is a folder and allow
 
 Version control is managing and tracking changes to your documents (program source code, images, websites, data files, etc.). `git` is a popular tool used for version control of software code. [github.com](https://github.com/) is popular platform that provides remote server hosting for git repositories. A repository is a collection of various files that you are tracking for changes and versions. Currently GitHub is the most popular platform for file sharing code and code packages.
 
-This section is a step-by-step guide to set up `git` on our [2i2c JupyterHub](itcoocean.2i2c.cloud). We will also configure `git` to use your [github.com](https://github.com/) account for managing your repositories hosted on [github.com](https://github.com/). There are 5 main steps.
+This section is a step-by-step guide to set up `git` on our [JupyterHub](https://dhub.opensci.live/). We will also configure `git` to use your [github.com](https://github.com/) account for managing your repositories hosted on [github.com](https://github.com/). There are 5 main steps.
 
 ### Step 1: Create a GitHub account
 
@@ -107,9 +107,9 @@ To complete the setup, you will need an account on [github.com](https://github.c
 
 We have created a demo repository for you to clone:
 
-https://github.com/Hackweek-ITCOocean/Git-Lesson
+https://github.com/nmfs-opensci/Git-Lesson
 
-1.  Start your [2i2c JupyterHub](https://itcoocean.2i2c.cloud)
+1.  Start your [JupyterHub](https://dhub.opensci.live/)
 
 2.  Click on the Git icon
 
@@ -117,7 +117,7 @@ https://github.com/Hackweek-ITCOocean/Git-Lesson
 
 3.  Click "Clone a Repository"
 
-4.  Where is says "Enter the URI of the remote Git repository", paste in the URL https://github.com/Hackweek-ITCOocean/Git-Lesson
+4.  Where it says "Enter the URI of the remote Git repository", paste in the URL https://github.com/nmfs-opensci/Git-Lesson
 
 5. The folder appears and you can enter the folder and edit and create files.
 
@@ -133,7 +133,7 @@ git config --global user.name "Makhan Virdi"
 git config --global user.email "Makhan.Virdi@gmail.com"
 ```
 
-**Note:** This name and email could be different from your github.com credentials. Remember `git` is a program that keeps track of your changes locally (on 2i2c JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by `git`, the email/name used in git configuration will show up next to your contributions on github.com when you `push` your repository to github.com (`git push` is discussed in a later step).
+**Note:** This name and email could be different from your github.com credentials. Remember `git` is a program that keeps track of your changes locally (on the JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by `git`, the email/name used in git configuration will show up next to your contributions on github.com when you `push` your repository to github.com (`git push` is discussed in a later step).
 ````
 
 4.  Configure `git` to store your github credentials to avoid having to enter your github username and token each time you push changes to your repository(in [Step 5](#step-5.-create-access-token-on-github.com), we will describe how to use github token instead of a password)

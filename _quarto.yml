@@ -35,7 +35,6 @@ website:
 #          - schedule.md
           - setup.md
           - support.md
-          - hackweek-links.md
           - coc.md
       - section: "Tutorials"
         contents:
@@ -111,17 +110,9 @@ website:
             contents:
               - python-notebooks/04_Combining_Data.ipynb
               - python-notebooks/04_Appending_Data.ipynb
-#      - text: <img width=100px>
-#      - text: <img src="/images/ecsn.png" width=100px>
-#        href: https://iioe-2.incois.gov.in/ecsn/index.html
-#      - text: <img src="/images/ocean-decade.png" width=150px>
-#        href: https://oceandecade.org/
-#      - text: <img src="/images/dcc-ior.png" width=150px>
-#        href: https://incois.gov.in/dcc-ior/index.jsp
-#      - text: <img src="/images/ecop.png" width=150px>
-#        href: https://www.ecopdecade.org/
-#      - text: DECCaD-IO
-#        href: https://oceandecade.org/actions/devising-early-career-capacity-development-indocn-deccad-io/
+      - text: <img width=100px>
+      - text: <img src="/images/noaa_emblem_logo-2022.png" width=100px>
+        href: https://fisheries.noaa.gov
   navbar:
     background: primary
     search: true
@@ -130,7 +121,7 @@ website:
         href: https://dhub.opensci.live/
         text: "JupyterHub"
       - icon: wechat
-        href: https://github.com/orgs/nmfs-opensci/discussions
+        href: https://github.com/nmfs-opensci/NOAAHackDays-2024/discussions
         text: "Discussions"
 #      - icon: slack
 #        href: https://app.slack.com/client/T05PV2USY56/C05P7QP47UL

@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">JupyterHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/orgs/nmfs-opensci/discussions"> <i class="bi bi-wechat" role="img">
+    <a class="nav-link" href="https://github.com/nmfs-opensci/NOAAHackDays-2024/discussions"> <i class="bi bi-wechat" role="img">
 </i> 
 <span class="menu-text">Discussions</span></a>
   </li>  
@@ -198,12 +198,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Acknowledgements</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hackweek-links.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hackweek Links</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -519,6 +513,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+ <span class="menu-text"><img width="100px"></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://fisheries.noaa.gov" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><img src="../images/noaa_emblem_logo-2022.png" width="100px"></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -656,7 +659,7 @@ cd ..</code></pre>
 <section id="what-is-version-control-git-github-and-how-to-set-it-up" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-version-control-git-github-and-how-to-set-it-up">What is version control, git, github, and how to set it up?</h3>
 <p>Version control is managing and tracking changes to your documents (program source code, images, websites, data files, etc.). <code>git</code> is a popular tool used for version control of software code. <a href="https://github.com/">github.com</a> is popular platform that provides remote server hosting for git repositories. A repository is a collection of various files that you are tracking for changes and versions. Currently GitHub is the most popular platform for file sharing code and code packages.</p>
-<p>This section is a step-by-step guide to set up <code>git</code> on our <a href="itcoocean.2i2c.cloud">2i2c JupyterHub</a>. We will also configure <code>git</code> to use your <a href="https://github.com/">github.com</a> account for managing your repositories hosted on <a href="https://github.com/">github.com</a>. There are 5 main steps.</p>
+<p>This section is a step-by-step guide to set up <code>git</code> on our <a href="https://dhub.opensci.live/">JupyterHub</a>. We will also configure <code>git</code> to use your <a href="https://github.com/">github.com</a> account for managing your repositories hosted on <a href="https://github.com/">github.com</a>. There are 5 main steps.</p>
 </section>
 <section id="step-1-create-a-github-account" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-create-a-github-account">Step 1: Create a GitHub account</h3>
@@ -665,15 +668,15 @@ cd ..</code></pre>
 <section id="step-2-clone-a-repository" class="level3">
 <h3 class="anchored" data-anchor-id="step-2-clone-a-repository">Step 2: Clone a repository</h3>
 <p>We have created a demo repository for you to clone:</p>
-<p>https://github.com/Hackweek-ITCOocean/Git-Lesson</p>
+<p>https://github.com/nmfs-opensci/Git-Lesson</p>
 <ol type="1">
-<li><p>Start your <a href="https://itcoocean.2i2c.cloud">2i2c JupyterHub</a></p></li>
+<li><p>Start your <a href="https://dhub.opensci.live/">JupyterHub</a></p></li>
 <li><p>Click on the Git icon</p></li>
 </ol>
 <p><img src="img/gitextension.png" class="img-fluid"></p>
 <ol start="3" type="1">
 <li><p>Click “Clone a Repository”</p></li>
-<li><p>Where is says “Enter the URI of the remote Git repository”, paste in the URL https://github.com/Hackweek-ITCOocean/Git-Lesson</p></li>
+<li><p>Where it says “Enter the URI of the remote Git repository”, paste in the URL https://github.com/nmfs-opensci/Git-Lesson</p></li>
 <li><p>The folder appears and you can enter the folder and edit and create files.</p></li>
 </ol>
 <blockquote class="blockquote">
@@ -689,7 +692,7 @@ git config --global user.name "Makhan Virdi"
 git config --global user.email "Makhan.Virdi@gmail.com"
 ```
 
-**Note:** This name and email could be different from your github.com credentials. Remember `git` is a program that keeps track of your changes locally (on 2i2c JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by `git`, the email/name used in git configuration will show up next to your contributions on github.com when you `push` your repository to github.com (`git push` is discussed in a later step).</code></pre>
+**Note:** This name and email could be different from your github.com credentials. Remember `git` is a program that keeps track of your changes locally (on the JupyterHub or your own computer) and github.com is a platform to host your repositories. However, since your changes are tracked by `git`, the email/name used in git configuration will show up next to your contributions on github.com when you `push` your repository to github.com (`git push` is discussed in a later step).</code></pre>
 <ol start="4" type="1">
 <li><p>Configure <code>git</code> to store your github credentials to avoid having to enter your github username and token each time you push changes to your repository(in <a href="#step-5.-create-access-token-on-github.com">Step 5</a>, we will describe how to use github token instead of a password)</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>

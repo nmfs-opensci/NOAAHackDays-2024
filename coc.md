@@ -2,7 +2,7 @@
 title: Code of Conduct
 ---
 
-The ITCOocean Hack2week is dedicated to providing a harassment-free learning experience for everyone regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. We do not tolerate harassment of participants in any form. Sexual language and imagery is not appropriate either in-person or virtual form, including the Discussion boards and Slack workspace. Participants (including event volunteers and organizers) violating these rules may be sanctioned or expelled from the event at the discretion of the organizers.
+We are dedicated to providing a harassment-free learning experience for everyone regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. We do not tolerate harassment of participants in any form. Sexual language and imagery is not appropriate either in-person or virtual form, including the Discussion boards and Slack workspace. Participants (including event volunteers and organizers) violating these rules may be sanctioned or expelled from the event at the discretion of the organizers.
 
 ## Definition of Harassment
 

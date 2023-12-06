@@ -75,7 +75,7 @@ Copy the token! You will need it in the next step.
 You can do this by cloning a private repo. In the Terminal, issue this command
 
 ```shell
-git clone https://github.com/Hackweek-ITCOocean/github_setup_check
+git clone https://github.com/nmfs-opensci/github_setup_check
 ```
 
 It will ask for your GitHub username and password. At the password part, paste in the Personal Access Token.
@@ -162,7 +162,7 @@ Try before watching.
 
 All of this activity is in RStudio.
 
-1. Clone this repo <https://github.com/Hackweek-ITCOocean/git-basics> to RStudio and create a new project
+1. Clone this repo <https://github.com/nmfs-opensci/git-basics> to RStudio and create a new project
 2. Navigate to the files in your new project, create a filed called to `<yourname>.md`. Use your actual name so the filename is different from everyone elses.
 3. Stage and then commit that new file.
 4. Push to GitHub.
