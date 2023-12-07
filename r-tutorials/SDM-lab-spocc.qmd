@@ -2,10 +2,7 @@
 title: SDM lab 1 - Downloading species data with spocc
 ---
 
-Set the data directory.
-
-* Make sure you are in the sdm-labs project. Top right corner.
-* Create a folder called `data` if you don't have one.
+First tell R where you are in the file structure. Before running this code, the folder specified by `dir_data` if it does not exist already.
 
 ```{r}
 here::i_am("r-tutorials/SDM-lab-spocc.qmd")
@@ -27,6 +24,7 @@ require(spocc)
 require(knitr)
 require(dplyr)
 require(readr)
+require(mapview)
 ```
 
 ## spocc R package
@@ -39,7 +37,7 @@ The spocc R package which allows us to query species occurrence data from a vari
 
 This is a classic example for Species Distribution modeling. It is a sloth found in South America.
 
-![](https://upload.wikimedia.org/wikipedia/commons/1/18/Bradypus.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/1/18/Bradypus.jpg){width=50%}
 ```{r}
 if (!file.exists(obs_csv)){
 # get species occurrence data from GBIF with coordinates
@@ -82,3 +80,8 @@ nrow(obs) # number of rows
 
 The format of a bounding box is
 [min-longitude, min-latitude, max-longitude, max-latitude]
+
+Plot using mapview.
+```{r}
+mapview::mapview(obs, col.regions = "gray")
+```

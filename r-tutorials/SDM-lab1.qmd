@@ -1,5 +1,5 @@
 ---
-title: SDM Lab 1
+title: Species Distribution Modeling
 ---
 
 Save the files to your own folder to work though the examples **or** follow along but don't save.
